@@ -14,7 +14,13 @@ exports.book_create_get = (req, res) => {
 exports.book_create_post = (req, res) => {
   console.log('BOOK CREATE: ', req.body)
   console.log(req.file)
-  let book = new Book(req.body)
+
+  let bookData = {
+    ...req.body,
+    image: req.file.filename
+  }
+
+  let book = new Book(bookData)
 
   book
     .save()
