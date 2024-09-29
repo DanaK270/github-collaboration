@@ -12,7 +12,15 @@
     <h1>BookShop App</h1>
   </a>
   <h3>header</h3>
+  <nav>
+  <% if(user) { %>
+    <a href="/logout" class="btn btn-outline-primary">Logout</a>
+    Hi <%= user.name %>
 
+  <% } else { %>
+    <a href="/auth/google" class="btn btn-outline-primary">Signin</a>
+    <%  } %>
+  </nav>
   <hr>
 
   <%- body %>
