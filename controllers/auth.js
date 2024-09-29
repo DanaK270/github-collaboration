@@ -13,7 +13,7 @@ exports.login_auth_google = passport.authenticate(
 
 exports.callback_auth_google = passport.authenticate('google', {
   successRedirect: '/'
-  // failureRedirect: '/home/index'
+  // failureRedirect: '/home/second'
 })
 
 exports.logout_auth_google = (req, res) => {
