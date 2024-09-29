@@ -6,11 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "dana k",
+  "author": "dana k, Mohamed Yaqoob, and ali yousif",
   "license": "ISC",
   "dependencies": {
+    "dayjs": "^1.11.13",
     "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.21.0",
-    "mongoose": "^8.6.3"
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.0",
+    "mongoose": "^8.7.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth": "^2.0.0"
   }
 }
