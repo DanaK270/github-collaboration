@@ -14,10 +14,12 @@ exports.book_create_get = (req, res) => {
 exports.book_create_post = (req, res) => {
   console.log('BOOK CREATE: ', req.body)
   console.log(req.file)
+  console.log(req.user)
 
   let bookData = {
     ...req.body,
-    image: req.file.filename
+    image: req.file.filename,
+    seller: req.user._id
   }
 
   let book = new Book(bookData)
@@ -35,6 +37,7 @@ exports.book_create_post = (req, res) => {
 // get books
 exports.book_index_get = (req, res) => {
   Book.find()
+    .populate('seller')
     .then((books) => {
       res.render('book/index', { books })
     })
