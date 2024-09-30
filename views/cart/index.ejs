@@ -1,5 +1,8 @@
 <!-- display cart-->
-<div class="container text-center">
+<div class="container text-center" >
+  <% if (!cart){ %>
+    <h2>Your Cart is Empty!</h2>
+  <% } else{%>
   <div class="row">
     <h3 style="text-align: left; padding: 30px;">Cart Items:</h3>
     <% cart.books.forEach(book => {%>
@@ -22,5 +25,10 @@
     <%})%>
 
     <h3 style="margin-top:20px ;">Total: <%= cart.totalPayment %> $</h3>
+    <form action="/cart/placeOrder" method="POST">
+      <input type="hidden" name="id" value="<%= cart._id %>" />
+      <button type="submit" class="btn btn-primary"> Place Order </button>
+    </form>
   </div>
+  <% } %>
 </div>   
