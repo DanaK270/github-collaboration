@@ -8,6 +8,8 @@ const router = express.Router()
 
 router.use(express.urlencoded({ extended: true }))
 
+const ensureLoggedIn = require('../config/ensureLoggedIn')
+
 //controller
 const bookCtrl = require('../controllers/book')
 
