@@ -12,8 +12,22 @@ router.use(express.urlencoded({ extended: true }))
 const bookCtrl = require('../controllers/book')
 
 //routes
-router.get('/add', bookCtrl.book_create_get)
-router.post('/add', upload.single('image'), bookCtrl.book_create_post)
+router.get('/add', ensureLoggedIn, bookCtrl.book_create_get)
+router.post(
+  '/add',
+  upload.single('image'),
+  ensureLoggedIn,
+  bookCtrl.book_create_post
+)
 router.get('/index', bookCtrl.book_index_get)
+router.get('/detail', bookCtrl.book_show_get)
+router.get('/edit', ensureLoggedIn, bookCtrl.book_edit_get)
+router.post(
+  '/update',
+  ensureLoggedIn,
+  upload.single('image'),
+  bookCtrl.book_update_post
+)
+router.get('/delete', ensureLoggedIn, bookCtrl.book_delete_get)
 
 module.exports = router

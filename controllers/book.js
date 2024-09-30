@@ -45,3 +45,51 @@ exports.book_index_get = (req, res) => {
       console.log(err)
     })
 }
+
+// book details
+exports.book_show_get = (req, res) => {
+  console.log(req.query.id)
+  Book.findById(req.query.id)
+    .populate('seller')
+    .then((book) => {
+      res.render('book/detail', { book })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.book_edit_get = (req, res) => {
+  Book.findById(req.query.id)
+    .then((book) => {
+      res.render('book/edit', { book })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.book_update_post = (req, res) => {
+  const updateData = {
+    ...req.body,
+    image: req.file.filename
+  }
+
+  Book.findByIdAndUpdate(req.body.id, updateData)
+    .then(() => {
+      res.redirect('/book/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
+
+exports.book_delete_get = (req, res) => {
+  Book.findByIdAndDelete(req.query.id)
+    .then(() => {
+      res.redirect('/book/index')
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}

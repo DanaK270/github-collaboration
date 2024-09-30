@@ -1,0 +1,48 @@
+<div class="detailsDiv">
+  <div>
+    <h1><%= book.title%></h1>
+
+    <h4 style="align-self: center;">
+      <%= book.description%>
+    </h4>
+
+    <h3>
+      <%= book.price%>
+    </h3>
+
+    <h3>
+      Book Condition: <%= book.condition%>
+    </h3>
+
+    <h3>
+      Book Category: <%= book.category%>
+    </h3>
+
+    <h3>
+      Seller Name: <%= book.seller.name%>
+    </h3>
+    <% if (user) {
+      console.log("user id:" + user._id)
+      console.log("seller id:" + book.seller._id)
+      %>
+      
+      <% if (user._id.toString() === book.seller._id.toString()) {%>
+        <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Edit Book</a>
+        <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Delete Book</a>
+      <% } %>
+    <% } %>
+  </div>
+  <div>
+    <img 
+          src="/images/<%= book.image %>"
+          class="card-img-top" 
+          alt="Book image" 
+          style="height: 300px; object-fit: cover;" 
+        />
+  </div>
+</div>
+
+
+
+
+
