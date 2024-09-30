@@ -1,0 +1,41 @@
+<h1>Edit Book</h1>
+
+<form action="/book/update" method="post" >
+  <div style="display: flex; justify-content: space-around; align-items: center;">
+    <div>
+      <div>
+        <label>Title</label>
+        <input name="title" type="text" value="<%= book.title %>" class="form-control"/>
+      </div>
+      
+      <div>
+        <label>Description</label>
+        <input name="description" type="text" value="<%= book.description %>" class="form-control"/>
+      </div>
+      
+      <div>
+        <label>Price</label>
+        <input name="price" type="number" value="<%= book.price %>" class="form-control"/>
+      </div>
+      
+      <div>
+        <label>Book Condition</label>
+        <input name="condition" type="text" value="<%= book.condition %>" class="form-control"/>
+      </div>
+
+      <div>
+        <label>Book Category</label>
+        <input name="category" type="text" value="<%= book.category %>" class="form-control"/>
+      </div>
+    </div>
+    <div>
+      
+    </div>
+  </div>
+
+  <input type="hidden" name="id" value="<%= book._id %>" />
+
+  
+  <button type="submit" class="btn btn-primary"> Update Book </button>
+  
+</form>

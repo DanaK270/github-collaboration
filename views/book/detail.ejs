@@ -21,6 +21,16 @@
     <h3>
       Seller Name: <%= book.seller.name%>
     </h3>
+    <% if (user) {
+      console.log("user id:" + user._id)
+      console.log("seller id:" + book.seller._id)
+      %>
+      
+      <% if (user._id.toString() === book.seller._id.toString()) {%>
+        <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Edit Book</a>
+        <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Delete Book</a>
+      <% } %>
+    <% } %>
   </div>
   <div>
     <img 
