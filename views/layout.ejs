@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <a href="/" class="noStyle"></a>
+  <a href="/" class="noStyle">
     <h1>BookShop App</h1>
   </a>
-  <h3>header</h3>
+  <!-- <h3>header</h3> -->
   <nav>
+    <!-- <a href="/" class="btn btn-outline-primary">Home</a> -->
+    <a href="/book/index" class="btn btn-outline-primary">view Books</a>
   <% if(user) { %>
+    <a href="/book/add" class="btn btn-outline-primary">add Books</a>
+    <a href="/profile/index" class="btn btn-outline-primary">view profile</a>
     <a href="/logout" class="btn btn-outline-primary">Logout</a>
     Hi <%= user.name %>
 

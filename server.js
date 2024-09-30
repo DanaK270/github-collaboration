@@ -52,11 +52,13 @@ app.use(function (req, res, next) {
 const indexRouter = require('./routes/index')
 const authRouter = require('./routes/auth')
 const bookRouter = require('./routes/book')
+const profileRouter = require('./routes/profile')
 
 // Mount Routes
 app.use('/', indexRouter)
 app.use('/', authRouter)
 app.use('/book', bookRouter)
+app.use('/profile', profileRouter)
 
 // Listen for all HTTP Requests on PORT 4000
 app.listen(PORT, () => {
