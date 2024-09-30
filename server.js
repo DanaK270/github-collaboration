@@ -62,5 +62,5 @@ app.use('/profile', profileRouter)
 
 // Listen for all HTTP Requests on PORT 4000
 app.listen(PORT, () => {
-  console.log(`Book Shop App is running on PORT ${PORT}`)
+  console.log(`App is running on PORT ${PORT}`)
 })
