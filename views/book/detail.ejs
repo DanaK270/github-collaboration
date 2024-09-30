@@ -1,0 +1,38 @@
+<div class="detailsDiv">
+  <div>
+    <h1><%= book.title%></h1>
+
+    <h4 style="align-self: center;">
+      <%= book.description%>
+    </h4>
+
+    <h3>
+      <%= book.price%>
+    </h3>
+
+    <h3>
+      Book Condition: <%= book.condition%>
+    </h3>
+
+    <h3>
+      Book Category: <%= book.category%>
+    </h3>
+
+    <h3>
+      Seller Name: <%= book.seller.name%>
+    </h3>
+  </div>
+  <div>
+    <img 
+          src="/images/<%= book.image %>"
+          class="card-img-top" 
+          alt="Book image" 
+          style="height: 300px; object-fit: cover;" 
+        />
+  </div>
+</div>
+
+
+
+
+

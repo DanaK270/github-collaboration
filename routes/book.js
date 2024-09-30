@@ -15,5 +15,6 @@ const bookCtrl = require('../controllers/book')
 router.get('/add', bookCtrl.book_create_get)
 router.post('/add', upload.single('image'), bookCtrl.book_create_post)
 router.get('/index', bookCtrl.book_index_get)
+router.get('/detail', bookCtrl.book_show_get)
 
 module.exports = router

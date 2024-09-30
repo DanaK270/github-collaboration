@@ -45,3 +45,16 @@ exports.book_index_get = (req, res) => {
       console.log(err)
     })
 }
+
+// book details
+exports.book_show_get = (req, res) => {
+  console.log(req.query.id)
+  Book.findById(req.query.id)
+    .populate('seller')
+    .then((book) => {
+      res.render('book/detail', { book })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
