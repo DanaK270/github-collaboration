@@ -53,12 +53,14 @@ const indexRouter = require('./routes/index')
 const authRouter = require('./routes/auth')
 const bookRouter = require('./routes/book')
 const profileRouter = require('./routes/profile')
+const cartRouter = require('./routes/cart')
 
 // Mount Routes
 app.use('/', indexRouter)
 app.use('/', authRouter)
 app.use('/book', bookRouter)
 app.use('/profile', profileRouter)
+app.use('/cart', cartRouter)
 
 // Listen for all HTTP Requests on PORT 4000
 app.listen(PORT, () => {

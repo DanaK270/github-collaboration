@@ -17,6 +17,10 @@
           <h5>Book Category: <%= book.category %></h5>
           <h5>Book Condition: <%= book.condition %></h5>
           <h5>Book Seller: <%= book.seller.name %></h5>
+          <form action="/cart/add" method="POST">
+            <input type="hidden" name="id" value="<%= book._id %>" />
+            <button type="submit" class="btn btn-primary"> Add to Cart </button>
+          </form>
           
         </div> 
       </div>
