@@ -70,7 +70,12 @@ exports.book_edit_get = (req, res) => {
 }
 
 exports.book_update_post = (req, res) => {
-  Book.findByIdAndUpdate(req.body.id, req.body)
+  const updateData = {
+    ...req.body,
+    image: req.file.filename
+  }
+
+  Book.findByIdAndUpdate(req.body.id, updateData)
     .then(() => {
       res.redirect('/book/index')
     })

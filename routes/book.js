@@ -17,7 +17,7 @@ router.post('/add', upload.single('image'), bookCtrl.book_create_post)
 router.get('/index', bookCtrl.book_index_get)
 router.get('/detail', bookCtrl.book_show_get)
 router.get('/edit', bookCtrl.book_edit_get)
-router.post('/update', bookCtrl.book_update_post)
+router.post('/update', upload.single('image'), bookCtrl.book_update_post)
 router.get('/delete', bookCtrl.book_delete_get)
 
 module.exports = router

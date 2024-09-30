@@ -1,6 +1,6 @@
 <h1>Edit Book</h1>
 
-<form action="/book/update" method="post" >
+<form action="/book/update" method="post" enctype="multipart/form-data">
   <div style="display: flex; justify-content: space-around; align-items: center;">
     <div>
       <div>
@@ -29,10 +29,16 @@
       </div>
     </div>
     <div>
-      
+      <img 
+      src="/images/<%= book.image %>"
+      class="card-img-top" 
+      alt="Book image" 
+      style="height: 200px; object-fit: cover;" 
+      />
+      <input name="image" type="file" multiple/>
     </div>
   </div>
-
+ 
   <input type="hidden" name="id" value="<%= book._id %>" />
 
   
