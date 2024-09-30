@@ -11,5 +11,6 @@ const cartCtrl = require('../controllers/cart')
 
 //routes
 router.post('/add', ensureLoggedIn, cartCtrl.cart_create_post)
+router.get('/index', ensureLoggedIn, cartCtrl.cart_index_get)
 
 module.exports = router
