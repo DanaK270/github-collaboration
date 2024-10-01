@@ -8,17 +8,21 @@
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <a href="/" class="noStyle">
+
     <h1>BookShop App</h1>
   </a>
   <!-- <h3>header</h3> -->
   <nav>
-    <!-- <a href="/" class="btn btn-outline-primary">Home</a> -->
-    <a href="/book/index" class="btn btn-outline-primary">view Books</a>
+    <a href="/"  class="btn btn-outline-primary">Home</a>
+    <a href="/book/index" class="btn btn-outline-primary">View Books</a>
+    <a href="/about" class="btn btn-outline-primary">About Us</a>
+    <a href="/contact" class="btn btn-outline-primary">Contact</a>
+    
   <% if(user) { %>
     <a href="/book/add" class="btn btn-outline-primary">add Books</a>
     <a href="/profile/index" class="btn btn-outline-primary">view profile</a>
     <a href="/logout" class="btn btn-outline-primary">Logout</a>
+
     Hi <%= user.name %>
 
   <% } else { %>
