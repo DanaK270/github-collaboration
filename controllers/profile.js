@@ -2,14 +2,14 @@ const dayjs = require('dayjs')
 var relativeTime = require('dayjs/plugin/relativeTime')
 dayjs.extend(relativeTime)
 
-const Profile = require('../models/Profile')
+const User = require('../models/User')
 
 exports.profile_index_get = (req, res) => {
   res.render('profile/index')
 }
 
 exports.profile_edit_get = (req, res) => {
-  Profile.findById(req.query.id)
+  User.findById(req.query.id)
     .then((profile) => {
       res.render('profile/edit', { profile })
     })
@@ -19,7 +19,8 @@ exports.profile_edit_get = (req, res) => {
 }
 
 exports.profile_update_post = (req, res) => {
-  Profile.findByIdAndUpdate(req.body.id, req.body)
+  console.log(req.body.id)
+  User.findByIdAndUpdate(req.user._id, req.body)
     .then(() => {
       res.redirect('/profile/index')
     })
