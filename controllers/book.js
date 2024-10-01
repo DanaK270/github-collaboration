@@ -72,7 +72,7 @@ exports.book_edit_get = (req, res) => {
 exports.book_update_post = (req, res) => {
   const updateData = {
     ...req.body,
-    image: req.file.filename
+    image: req.file ? req.file.filename : req.body.currentImg
   }
 
   Book.findByIdAndUpdate(req.body.id, updateData)
