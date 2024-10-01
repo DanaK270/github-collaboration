@@ -8,9 +8,19 @@ const router = express.Router()
 
 router.use(express.urlencoded({ extended: true }))
 
+const ensureLoggedIn = require('../config/ensureLoggedIn')
+
 //controller
 const profileCtrl = require('../controllers/profile')
 
-router.get('/index', profileCtrl.profile_index_get)
+//routes
+router.get('/index', ensureLoggedIn, profileCtrl.profile_index_get)
+router.get('/edit', ensureLoggedIn, profileCtrl.profile_edit_get)
+router.post(
+  '/update',
+  ensureLoggedIn,
+  upload.single('image'),
+  profileCtrl.profile_update_post
+)
 
 module.exports = router
