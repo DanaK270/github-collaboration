@@ -1,0 +1,34 @@
+<!-- display cart-->
+<div class="container text-center" >
+  <% if (!cart){ %>
+    <h2>Your Cart is Empty!</h2>
+  <% } else{%>
+  <div class="row">
+    <h3 style="text-align: left; padding: 30px;">Cart Items:</h3>
+    <% cart.books.forEach(book => {%>
+
+      <div style="display: flex; justify-content: space-between; padding: 30px;" > 
+        <div>
+        <img 
+          src="/images/<%= book.image %>"
+          class="card-img-top" 
+          alt="Book image" 
+          style="height: 200px; object-fit: cover;" 
+        />
+      </div>
+
+        <div class="card-body" style="text-align: left;">
+          <h5><a href="/book/detail?id=<%= book._id%>"><%= book.title %></a></h5>
+          <h5><%= book.price %>$</h5>
+        </div> 
+      </div>
+    <%})%>
+
+    <h3 style="margin-top:20px ;">Total: <%= cart.totalPayment %> $</h3>
+    <form action="/cart/placeOrder" method="POST">
+      <input type="hidden" name="id" value="<%= cart._id %>" />
+      <button type="submit" class="btn btn-primary"> Place Order </button>
+    </form>
+  </div>
+  <% } %>
+</div>   
