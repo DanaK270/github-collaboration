@@ -8,7 +8,9 @@ const userSchema = mongoose.Schema(
       required: true
     },
     email: String,
-    avatar: String
+    avatar: String,
+    Number: String,
+    image: String
   },
   { timestamps: true }
 )

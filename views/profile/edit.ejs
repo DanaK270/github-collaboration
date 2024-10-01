@@ -1,0 +1,26 @@
+<h1>Edit Profile </h1>
+
+<form method="POST" action="/profile/update">
+  <div>
+    <label>name</label>
+    <input name="name" type="text" value="<%= user.name %>" />
+  </div>
+
+  <div>
+    <label>Email Address</label>
+    <input name="email" type="email" value="<%= user.email %>" />
+  </div>
+
+  <div>
+    <label>Phone Number</label>
+    <input name="number" type="text" value="<%= user.number %>" />
+  </div>
+
+  <div>
+    <label>Image</label>
+    <input name="image" type="file" value="<%= user.image %>" />
+  </div>
+
+  <button type="submit">Update profile</button>
+
+</form>
