@@ -19,6 +19,10 @@ exports.profile_edit_get = (req, res) => {
 }
 
 exports.profile_update_post = (req, res) => {
+  if (req.file) {
+    req.body.image = req.file.filename
+  }
+
   console.log(req.body.id)
   User.findByIdAndUpdate(req.user._id, req.body)
     .then(() => {

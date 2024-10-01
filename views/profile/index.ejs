@@ -1,7 +1,7 @@
 <table>
   <tr>
     <th>
-      <% if (user.image== null) {%>
+      <% if (user.image === null) {%>
       <img 
       src="<%= user.avatar %>"
       class="card-img-top" 
@@ -10,7 +10,7 @@
     />
   <%} else{ %>
       <img 
-      src="<%= user.image %>"
+      src="/images/<%= user.image %>"
       class="card-img-top" 
       alt="profile image" 
       style="height: 10px 10px;" 
