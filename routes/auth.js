@@ -17,3 +17,6 @@ router.get('/oauth2callback', authCtrl.callback_auth_google)
 router.get('/logout', authCtrl.logout_auth_google)
 
 module.exports = router
+
+
+

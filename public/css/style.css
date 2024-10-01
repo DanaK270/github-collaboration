@@ -119,13 +119,13 @@ hr {
   color: #333;
 }
 
-/* Main Section */
+
 main {
   padding: 0;
   margin: 0;
 }
 
-/* Hero Section */
+
 .hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/path/to/hero-image.jpg') center/cover no-repeat;
   color: white;
@@ -148,7 +148,7 @@ main {
   font-weight: 300;
 }
 
-/* About Section */
+
 .about {
   text-align: center;
   padding: 50px 20px;
@@ -172,7 +172,7 @@ main {
   max-width: 800px;
 }
 
-/* View Books Section */
+
 .view-books {
   text-align: center;
   padding: 50px 20px;
@@ -208,3 +208,45 @@ main {
   color: #fff;
 }
 
+.book-collection {
+  margin: 20px 0;
+}
+
+.book-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #b0a695;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.book-item h3 {
+  margin: 0 0 5px 0;
+}
+
+.navigation {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.view-available-books {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #b0a695;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.view-available-books:hover {
+  background-color: #333;
+  color: #f3eeea;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 20px 0;
+}

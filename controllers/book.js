@@ -3,12 +3,28 @@ var relativeTime = require('dayjs/plugin/relativeTime')
 dayjs.extend(relativeTime)
 
 const Book = require('../models/Book')
-// const Order = require('../models/Order')
 
+//sold books
+exports.markBookAsSold = async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id);
+    if (book) {
+      book.status = 'sold';
+      await book.save();
+      res.redirect('/profile/detail'); 
+    } else {
+      res.status(404).send('Book not found');
+    }
+  } catch (err) {
+    console.error(err);
+    res.redirect('/');
+  }
+};
 // add books - GET REQUEST (to display the form for the user to add a book)
 exports.book_create_get = (req, res) => {
   res.render('book/add')
 }
+
 
 // add book - POST REQUEST
 exports.book_create_post = (req, res) => {
@@ -92,4 +108,15 @@ exports.book_delete_get = (req, res) => {
     .catch((err) => {
       console.log(err)
     })
+}
+
+async function markBookAsSold(bookId) {
+  try {
+    const book = await Book.findById(bookId);
+    book.status = 'sold'; 
+    await book.save();
+    console.log('Book marked as sold');
+  } catch (err) {
+    console.error('Error marking book as sold:', err);
+  }
 }
