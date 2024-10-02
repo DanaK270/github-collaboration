@@ -26,6 +26,26 @@
 
 ### _Unsolved Problems_
 
+- When the seller deletes a book and other users already have it in their cart, the book is successfully removed from the cart, but the price of this book is not deducted from the cart's total payment.
+
+- The order accesses books by reference, so when the seller updates the book's price, the new price will be displayed in the order not the old price that the buyer have payed.
+
+- When the same book is added to cart more than once and then the buyer clicked "remove" for one of them only, all of them will get removed but the total payment of the cart will be deducted by the price of only one book.
+
 ---
 
 ### _Future Enhancements_
+
+- We can adress the unsolved problems.
+
+- Enable the user to create a wishlist to save books they want to buy.
+
+- We can add rating and reviews for each book.
+
+- We can add book quantiy and mark them as out of stock when the quantity reaches zero.
+
+- Allow user to add multiple images for the book
+
+- Add filers to search by the book category
+
+- Add a search bar
