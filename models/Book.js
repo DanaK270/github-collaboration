@@ -8,6 +8,10 @@ const bookSchema = mongoose.Schema(
     condition: String,
     image: String,
     category: String,
+    quantity: {
+      type: Number,
+      default: 1
+    },
     seller: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
