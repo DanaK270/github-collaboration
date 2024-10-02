@@ -10,9 +10,29 @@
 
 ### _ERD_
 
----
+## ![alt text](project2updated.drawio.png)
 
 ### _Wireframes_
+
+- Home Page
+
+![alt text](<home page.png>)
+
+- View Books
+
+![alt text](BookLibrary.png)
+
+- Cart
+
+![alt text](Cart.png)
+
+- Add Book
+
+![alt text](<Add Book.png>)
+
+- Profile
+
+![alt text](Profile.png)
 
 ---
 
