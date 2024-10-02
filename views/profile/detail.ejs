@@ -3,21 +3,18 @@
 
 <div class="book-collection">
   <% if (books && books.length > 0) { %> 
-    <ul>
       <% books.forEach(function(book) { %>
         <li class="book-item">
           <h3><%= book.title %></h3>
-          <p><strong>Author:</strong> <%= book.author %></p>
           <p><strong>Published:</strong> <%= dayjs(book.published).format('MMMM D, YYYY') %></p>
           <p><strong>Status:</strong> <%= book.status === 'sold' ? 'Sold' : 'Available' %></p>
         </li>
       <% }); %>
-    </ul>
   <% } else { %>
     <p>You haven't added any books yet.</p>
   <% } %>
 </div>
 
 <div class="navigation">
-  <a href="/book" class="view-available-books">View Available Books</a>
+  <a href="/book/index" class="view-available-books">View Available Books</a>
 </div>

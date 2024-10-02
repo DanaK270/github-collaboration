@@ -17,5 +17,6 @@ const ensureLoggedIn = require('../config/ensureLoggedIn')
 const profileCtrl = require('../controllers/profile')
 
 router.get('/index', profileCtrl.profile_index_get)
+router.get('/detail', profileCtrl.Profile_detail_get)
 
 module.exports = router
