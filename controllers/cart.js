@@ -62,7 +62,39 @@ exports.placeOrder_post = async (req, res) => {
       { buyer: req.user._id, status: 'active' },
       { status: 'processed' }
     )
-    res.redirect('/cart/index') //this should redirects to orders page
+    res.redirect('/cart/index')
+  } catch (err) {
+    console.log(err)
+  }
+}
+
+//to remove items from cart
+exports.cart_edit_post = async (req, res) => {
+  try {
+    const bookId = req.body.itemId
+
+    const book = await Book.findById(bookId)
+    if (!book) {
+      return res.status(404).json({ message: 'Book not found' })
+    }
+
+    const cart = await Cart.findOne({ buyer: req.user._id, status: 'active' })
+    if (!cart) {
+      return res.status(404).json({ message: 'Cart not found' })
+    }
+
+    const newPay = cart.totalPayment - book.price
+
+    await Cart.findOneAndUpdate(
+      { buyer: req.user._id, status: 'active' },
+      {
+        $pull: { books: bookId },
+        totalPayment: newPay
+      },
+      { new: true }
+    )
+
+    res.redirect('/cart/index')
   } catch (err) {
     console.log(err)
   }
