@@ -8,7 +8,10 @@ body {
   transition: all 0.3s ease;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   text-align: center;
   color: #2c2c2c;
 }
@@ -71,7 +74,8 @@ nav a:hover {
 }
 
 /* Button Styles */
-.btn, .view-books-btn {
+.btn,
+.view-books-btn {
   font-size: 1.2rem;
   padding: 10px 30px;
   border-radius: 50px;
@@ -84,13 +88,16 @@ nav a:hover {
   font-weight: bold;
 }
 
-.btn:hover, .view-books-btn:hover {
+.btn:hover,
+.view-books-btn:hover {
   background-color: #333;
   color: #f3eeea;
 }
 
 /* Container Styles */
-.container, .about, .view-books {
+.container,
+.about,
+.view-books {
   max-width: 1000px;
   margin: 50px auto;
   padding: 20px;
@@ -99,7 +106,8 @@ nav a:hover {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about p, .view-books p {
+.about p,
+.view-books p {
   font-size: 1.2rem;
   color: #555;
   line-height: 1.8;
@@ -114,7 +122,8 @@ nav a:hover {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/path/to/hero-image.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('/path/to/hero-image.jpg') center/cover no-repeat;
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -235,4 +244,37 @@ header {
 .nav-links .btn {
   margin-right: 15px;
   border-radius: 30px;
+}
+
+.detailsDiv {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.cartIndex {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+@media (max-width: 500px) {
+  .detailsDiv {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cartIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+  }
 }

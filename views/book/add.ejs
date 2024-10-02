@@ -1,38 +1,35 @@
 <h1> Add Book </h1>
 
-<form method="POST" action="/book/add" enctype="multipart/form-data">
-  <div>
+<form method="POST" action="/book/add" enctype="multipart/form-data" style="margin: 40px;">
+  <div style="margin-bottom:10px ;">
     <label>Title</label>
     <input name="title" type="text" class="form-control" />
   </div>
   
-  <div>
+  <div style="margin-bottom:10px ;">
     <label>Description</label>
     <textarea name="description" class="form-control"></textarea>
   </div>
   
-  <div>
+  <div style="margin-bottom:10px ;">
     <label>Price</label>
     <input name="price" type="number" class="form-control" />
   </div>
   
-  <div>
+  <div style="margin-bottom:10px ;">
     <label>Condition</label>
     <input name="condition" type="text" class="form-control" />
   </div>
   
-  <div>
+  <div style="margin-bottom:10px ;">
     <label>Category</label>
     <input name="category" type="text" class="form-control" />
   </div>
   
-  <div>
+  <div style="margin-bottom:10px ;">
     <label>Images</label>
     <input name="image" type="file" required/>
-  </div>
-
-  <!-- <input type="hidden" name="seller" value="<%=  // user.name %>" /> -->
-  <!-- wee will add it after we create the user auth -->  
+  </div> 
 
   <button type="submit" class="btn btn-primary"> Create Book </button>
 </form>

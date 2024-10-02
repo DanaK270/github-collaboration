@@ -7,7 +7,7 @@
     <h3 style="text-align: left; padding: 30px;">Cart Items:</h3>
     <% cart.books.forEach(book => {%>
 
-      <div style="display: flex; justify-content: space-between; padding: 30px;" > 
+      <div class="cartIndex" > 
         <div>
         <img 
           src="/images/<%= book.image %>"
@@ -15,7 +15,7 @@
           alt="Book image" 
           style="height: 200px; object-fit: cover;" 
         />
-      </div>
+        </div>
 
         <div class="card-body" style="text-align: left;">
           <h5><a href="/book/detail?id=<%= book._id%>"><%= book.title %></a></h5>
