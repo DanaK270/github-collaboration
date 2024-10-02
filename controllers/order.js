@@ -12,3 +12,15 @@ exports.order_index_get = (req, res) => {
       console.log(err)
     })
 }
+
+exports.order_details_get = (req, res) => {
+  Order.findById(req.query.id)
+    .populate('books')
+    .then((order) => {
+      console.log('order', order)
+      res.render('order/orderDetails', { order, dayjs })
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+}
