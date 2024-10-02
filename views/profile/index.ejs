@@ -1,11 +1,22 @@
 <table>
   <tr>
-    <th><img 
-      src="<%= user.avatar %>"
-      class="card-img-top" 
-      alt="profile image" 
-      style="height: 10px 10px;" 
-    /></th>
+    <th>
+      <% if (user.image === null) {%>
+        <img 
+        src="<%= user.avatar %>"
+        class="card-img-top" 
+        alt="profile image" 
+        style="height: 10px 10px;" 
+      />
+    <%} else{ %>
+        <img 
+        src="/images/<%= user.image %>"
+        class="card-img-top" 
+        alt="profile image" 
+        style="height: 10px 10px;" 
+      />
+      <%}%>
+    </th>
   </tr>
   <tr>
     <div><th><h3>Name:</h3></th> <th><h4><%= user.name %></h4></th></div>
