@@ -10,22 +10,21 @@
 <body>
 
   <header>
-    <nav class="navbar navbar navbar-expand-lg" style="display: flex; justify-content: left;">
+    <nav class="navbar navbar-expand-lg" style="display: flex; justify-content: left;">
       <div class="logo-container">
         <a href="/">
           <img src="/images/book sope logo.png" alt="Book Shop Logo" class="booklogo">
         </a>
       </div>
-      <div class="ms-auto" style="text-align: left;">
-        <a href="/" class="btn btn-outline-primary"><i class="fa fa-house" style="color: white;"></i></a>
-        <a href="/book/index" class="btn btn-outline-primary"><i class="fa-solid fa-book" style="color: white;"></i></a>
+      <div class="navbar" style="text-align: left;">
+        <a href="/book/index" class="btn btn-outline-primary" style="color: white; border: 0px;"><i class="fa-solid fa-book" style="color: white;"></i> View Books</a>
         <% if(user) { %>
-          <a href="/book/add" class="btn btn-outline-primary"><i class="fa-solid fa-plus" style="color: white;"></i></a>
-          <a href="/profile/index" class="btn btn-outline-primary"><i class="fa-solid fa-street-view" style="color: white;"></i></a>
-          <a href="/logout" class="btn btn-outline-primary"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a>
+          <a href="/book/add" class="btn btn-outline-primary" style="color: white; border: 0px;"><i class="fa-solid fa-plus" style="color: white;"></i> Add Book</a>
+          <a href="/profile/index" class="btn btn-outline-primary" style="color: white; border: 0px;"><i class="fa-solid fa-street-view" style="color: white;"></i> Profile</a>
+          <a href="/logout" class="btn btn-outline-primary" style="color: white; border: 0px;"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i> Logout</a>
           <span class="ms-2" style="color: white;">Hi, <%= user.name %></span>
         <% } else { %>
-          <a href="/auth/google" class="btn btn-outline-primary"><i class="fa-solid fa-right-to-bracket" style="color: white;"></i></a>
+          <a href="/auth/google" class="btn btn-outline-primary" style="color: white; border: 0px;"><i class="fa-solid fa-right-to-bracket" style="color: white;"></i> Login</a>
         <% } %>
       </div>
     </nav>
@@ -47,9 +46,9 @@
     <p> Kingdom of Bahrain,Manama </p>
     <p>BIBF GA</p>
     <p>Contact us:
-      Dana Khalid 
-      Mohammad yaqoob
-      Ali Yousif
+      <a href="https://github.com/DanaK270">Dana Khalid </a> |
+      <a href="https://github.com/MohamedYaqoob">Mohammad yaqoob</a> |
+      <a href="https://github.com/Aliiyousiff">Ali Yousif</a>
     </p>
   </footer>
 
