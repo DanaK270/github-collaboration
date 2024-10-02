@@ -1,13 +1,13 @@
 <div class="detailsDiv">
-  <div style="margin-top: 10px;">
+  <div >
     <h1><%= book.title%></h1>
 
-    <h4 style="align-self: center;">
+    <h4 style="text-align: left;">
       <%= book.description%>
     </h4>
 
     <h3>
-      <%= book.price%>
+      <%= book.price%> $
     </h3>
 
     <h3>
@@ -39,7 +39,7 @@
           src="/images/<%= book.image %>"
           class="card-img-top" 
           alt="Book image" 
-          style="height: 300px; object-fit: cover;" 
+          style="width: 300px; object-fit: cover;" 
         />
   </div>
 </div>
