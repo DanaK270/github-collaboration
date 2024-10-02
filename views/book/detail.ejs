@@ -1,5 +1,5 @@
 <div class="detailsDiv">
-  <div>
+  <div style="margin-top: 10px;">
     <h1><%= book.title%></h1>
 
     <h4 style="align-self: center;">
@@ -28,8 +28,8 @@
       
       <% if (user._id.toString() === book.seller._id.toString()) {%>
         <div style="display: flex; justify-content: space-between;">
-        <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Edit Book</a>
-        <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Delete Book</a>
+        <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary" style="margin-bottom: 10px;">Edit Book</a>
+        <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary" style="margin-bottom: 10px;">Delete Book</a>
         </div>
       <% } %>
     <% } %>
