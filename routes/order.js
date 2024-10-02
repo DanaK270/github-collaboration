@@ -11,5 +11,6 @@ const orderCtrl = require('../controllers/order')
 
 //routes
 router.get('/index', ensureLoggedIn, orderCtrl.order_index_get)
+router.get('/detail', ensureLoggedIn, orderCtrl.order_details_get)
 
 module.exports = router
