@@ -22,7 +22,11 @@ exports.cart_create_post = async (req, res) => {
       })
     }
     cart.totalPayment += book.price
-    cart.books.push(book)
+    if (Book.find(book.id)) {
+      book.quantity += 1
+    } else {
+      cart.books.push(book)
+    }
     await cart.save()
     res.redirect('/cart/index')
   } catch (err) {
