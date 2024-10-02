@@ -1,52 +1,41 @@
-<table>
-  <tr>
-    <th>
-      <% if (user.image === null) {%>
+<div style="margin: 20px;"> 
+   <% if (user.image === null) {%>
         <img 
         src="<%= user.avatar %>"
         class="card-img-top" 
         alt="profile image" 
-        style="height: 10px 10px;" 
+        style="width: 400px;"
       />
     <%} else{ %>
         <img 
         src="/images/<%= user.image %>"
         class="card-img-top" 
         alt="profile image" 
-        style="height: 10px 10px;" 
+        style="width: 400px;"
       />
       <%}%>
-    </th>
-  </tr>
-  <tr>
-    <div><th><h3>Name:</h3></th> <th><h4><%= user.name %></h4></th></div>
-  </tr>
-  <tr>
-    <div><th><h3>Email:</h3></th> <th><h4><%= user.email %></h4></th></div>
 
-  </tr>
-  <tr>
-    <div><th><h3>number:</h3></th> <th><h4><%= user.number %></h4></th> </div>
-  </tr>
+    <div style="align-content: start; margin-top: 30px;">
 
-  <tr>      
-  <th>
+      <h3 style="text-align: left;">Name: <%= user.name %></h3>
+
+      <h3 style="text-align: left;">Email: <%= user.email %></h3>
+
+      <h3 style="text-align: left;">number: <%= user.number %></h3>
+    </div>
+
+
+
     <a href="/profile/edit" class="btn btn-outline-primary">
     Edit  
     </a>
-  </th>
-  </tr>
+ 
 
-  <tr>      
-    <th>
+
       <a href="/order/index" class="btn btn-outline-primary"> Order History
       </a>
-    </th>
-  </tr>
-</table>
-<tr>
+
   <a href="/profile/detail"class="btn btn-outline-primary">View My Books</a>
-</tr>
 
 <!-- <div>
 <div>
@@ -61,3 +50,4 @@
 <div><h3>Name:</h3> <h4><%= user.name %></h4></div>
 <div><h3>Email:</h3> <h4><%= user.email %></h4></div>
 </div> -->
+</div>
