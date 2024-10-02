@@ -252,6 +252,12 @@ header {
   margin: 20px;
 }
 
+.cartIndex {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
 @media (max-width: 500px) {
   .detailsDiv {
     display: flex;
@@ -263,5 +269,12 @@ header {
   .navbar {
     display: flex;
     flex-direction: column;
+  }
+
+  .cartIndex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
   }
 }
