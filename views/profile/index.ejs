@@ -1,22 +1,11 @@
 <table>
   <tr>
-    <th>
-      <% if (user.image === null) {%>
-      <img 
+    <th><img 
       src="<%= user.avatar %>"
       class="card-img-top" 
       alt="profile image" 
       style="height: 10px 10px;" 
-    />
-  <%} else{ %>
-      <img 
-      src="/images/<%= user.image %>"
-      class="card-img-top" 
-      alt="profile image" 
-      style="height: 10px 10px;" 
-    />
-    <%}%>
-  </th>
+    /></th>
   </tr>
   <tr>
     <div><th><h3>Name:</h3></th> <th><h4><%= user.name %></h4></th></div>
@@ -26,9 +15,9 @@
 
   </tr>
   <tr>
-    <div><th><h3>number:</h3></th> <th><h4><%= user.number %></h4></th> </div>
-    
+    <div><th><h3>number:</h3></th> </div>
   </tr>
+
   <tr>      
   <th>
     <a href="/profile/edit" class="btn btn-outline-primary">
@@ -44,9 +33,9 @@
     </th>
     </tr>
 </table>
-
-
-
+<tr>
+  <a href="/profile/detail">View My Books</a>
+</tr>
 
 <!-- <div>
 <div>

@@ -3,41 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BookShop</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQdPzJlGMtIpAi7ZkppZ8W9zzT9V0wXmgOuwXiXEhV0D4M3OeuMvJzQ/Y9mJpIlBhQiwPsmMVzCj73Mg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
-    <h1>BookShop App</h1>
-  </a>
-  <!-- <h3>header</h3> -->
-  <nav>
-    <a href="/"  class="btn btn-outline-primary">Home</a>
-    <a href="/book/index" class="btn btn-outline-primary">View Books</a>
-    <a href="/about" class="btn btn-outline-primary">About Us</a>
-    <a href="/contact" class="btn btn-outline-primary">Contact</a>
-    
-  <% if(user) { %>
-    <a href="/book/add" class="btn btn-outline-primary">add Books</a>
-    <a href="/profile/index" class="btn btn-outline-primary">view profile</a>
-    <a href="/logout" class="btn btn-outline-primary">Logout</a>
+  <header>
+    <nav class="navbar navbar navbar-expand-lg" style="display: flex; justify-content: left;">
+      <div class="logo-container">
+        <a href="/">
+          <img src="/images/book sope logo.png" alt="Book Shop Logo" class="booklogo">
+        </a>
+      </div>
+      <div class="ms-auto" style="text-align: left;">
+        <a href="/" class="btn btn-outline-primary"><i class="fa fa-house" style="color: white;"></i></a>
+        <a href="/book/index" class="btn btn-outline-primary"><i class="fa-solid fa-book" style="color: white;"></i></a>
+        <% if(user) { %>
+          <a href="/book/add" class="btn btn-outline-primary"><i class="fa-solid fa-plus" style="color: white;"></i></a>
+          <a href="/profile/index" class="btn btn-outline-primary"><i class="fa-solid fa-street-view" style="color: white;"></i></a>
+          <a href="/logout" class="btn btn-outline-primary"><i class="fa-solid fa-right-from-bracket" style="color: white;"></i></a>
+          <span class="ms-2" style="color: white;">Hi, <%= user.name %></span>
+        <% } else { %>
+          <a href="/auth/google" class="btn btn-outline-primary"><i class="fa-solid fa-right-to-bracket" style="color: white;"></i></a>
+        <% } %>
+      </div>
+    </nav>
+  </header>
 
-    Hi <%= user.name %>
-
-  <% } else { %>
-    <a href="/auth/google" class="btn btn-outline-primary">Signin</a>
-    <%  } %>
-  </nav>
   <hr>
 
-  <%- body %>
+  
+  <main>
+    <%- body %>
+  </main>
 
   <br /><br />
   <hr />
-  <br />
-  <div class="footer">
-    Book Shop App &copy;  2024
-  </div>
+
+ 
+  <footer class="text-center p-3" style="background-color: #f3eeea;">
+    <p>Book Shop App &copy; 2024</p>
+    <p> Kingdom of Bahrain,Manama </p>
+    <p>BIBF GA</p>
+    <p>Contact us:
+      Dana Khalid 
+      Mohammad yaqoob
+      Ali Yousif
+    </p>
+  </footer>
+
 </body>
+<script src="https://kit.fontawesome.com/3d74b2726d.js" crossorigin="anonymous"></script>
 </html>
