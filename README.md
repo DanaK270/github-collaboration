@@ -2,6 +2,16 @@
 
 ---
 
+### _Developed By_
+
+- Dana Khaled | [Linkedin](https://www.linkedin.com/in/dana-alebrahim-a22716267/) | [Github](https://github.com/DanaK270)
+
+- Mohammad yaqoob | [Linkedin](www.linkedin.com/in/mohamed-yaqoob-abdulla) | [Github](https://github.com/MohamedYaqoob)
+
+- Ali Yousif | [Linkedin](www.linkedin.com/in/ali-a-karim) | [Github](https://github.com/Aliiyousiff)
+
+---
+
 ### _Project Overview_
 
 #### This project is an online seconhand book shop, where users can add books for sale and purchase books from other users. Each user can create books, edit and delete book they have created, add books to cart, issue orders, and view their order history and the book they have put for sale. The website also have features for signup, signin and signout using google OAuth and it enables users to manage their profile.
@@ -36,11 +46,23 @@
 
 ---
 
-### _Trello Board Link_
+### _Technologies Used_
 
----
+- Node.js: Used as the backend for javaScript.
 
-### _Our App Link_
+- Express.js: Provides the framework for handling routing, middleware, and building the RESTful API.
+
+- MongoDB: The database used to store and manage data for users, books, carts, and orders.
+
+- Mongoose: An ODM library used to define schemas and interact with MongoDB.
+
+- EJS (Embedded JavaScript): Used for rendering our HTML pages while adding dynamic content.
+
+- Passport.js: Handles user authentication for Signup, signin and sigout.
+
+- Multer: Used to upload and store profile and book images.
+
+- Bootstrap: A CSS framework used for improved and responsive design.
 
 ---
 
