@@ -27,7 +27,8 @@
       %>
       
       <% if (user._id.toString() === book.seller._id.toString()) {%>
-        <div style="display: flex; justify-content: space-between;">
+        <div style="display: flex; align-items: center;">
+          <div style="margin-right: 20px;"></div>
         <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Edit Book</a>
         <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Delete Book</a>
         </div>
@@ -39,8 +40,7 @@
           src="/images/<%= book.image %>"
           class="card-img-top" 
           alt="Book image" 
-          style="height: 300px; object-fit: cover;" 
-        />
+          style="height: 300px; width: 200px;" />
   </div>
 </div>
 
