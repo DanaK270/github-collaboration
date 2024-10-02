@@ -83,7 +83,7 @@ exports.cart_edit_post = async (req, res) => {
       return res.status(404).json({ message: 'Cart not found' })
     }
 
-    const newPay = cart.totalPayment - book.price
+    const newPay = cart.totalPayment - book.price * book.quantity
 
     await Cart.findOneAndUpdate(
       { buyer: req.user._id, status: 'active' },
