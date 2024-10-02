@@ -4,17 +4,29 @@
 <div class="book-collection">
   <% if (books && books.length > 0) { %> 
       <% books.forEach(function(book) { %>
-        <li class="book-item">
+        <div class="book-item">
           <h3><%= book.title %></h3>
           <p><strong>Published:</strong> <%= dayjs(book.published).format('MMMM D, YYYY') %></p>
           <p><strong>Status:</strong> <%= book.status === 'sold' ? 'Sold' : 'Available' %></p>
-        </li>
+          <div>
+            <img 
+                  src="/images/<%= book.image %>"
+                  class="card-img-top" 
+                  alt="Book image" 
+                  style="height: 200px; width: 300px;" 
+                />
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary" style="margin-bottom: 10px;">Edit Book</a>
+          <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary" style="margin-bottom: 10px;">Delete Book</a>
+          </div>
       <% }); %>
+    
   <% } else { %>
     <p>You haven't added any books yet.</p>
   <% } %>
 </div>
-
 <div class="navigation">
-  <a href="/book/index" class="view-available-books">View Available Books</a>
+  <a href="/book/index" class="btn btn-outline-primary"> Go Back To Books</a>
 </div>
