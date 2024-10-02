@@ -15,6 +15,7 @@ exports.order_index_get = (req, res) => {
 
 exports.order_details_get = (req, res) => {
   Order.findById(req.query.id)
+    .populate('books')
     .then((order) => {
       console.log('order', order)
       res.render('order/orderDetails', { order, dayjs })
