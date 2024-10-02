@@ -11,11 +11,11 @@ const router = express.Router()
 
 router.use(express.urlencoded({ extended: true }))
 
+const ensureLoggedIn = require('../config/ensureLoggedIn')
+
 //controller
 const profileCtrl = require('../controllers/profile')
 
-router.get('/index', isAuthenticated, profileCtrl.profile_index_get)
-router.get('/detail', isAuthenticated, profileCtrl.Profile_detail_get);
-
+router.get('/index', profileCtrl.profile_index_get)
 
 module.exports = router

@@ -27,8 +27,10 @@
       %>
       
       <% if (user._id.toString() === book.seller._id.toString()) {%>
+        <div style="display: flex; justify-content: space-between;">
         <a href="/book/edit?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Edit Book</a>
         <a href="/book/delete?id=<%= book._id%>" id="link" class="btn btn-outline-primary">Delete Book</a>
+        </div>
       <% } %>
     <% } %>
   </div>

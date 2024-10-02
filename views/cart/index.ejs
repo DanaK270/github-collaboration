@@ -20,9 +20,18 @@
         <div class="card-body" style="text-align: left;">
           <h5><a href="/book/detail?id=<%= book._id%>"><%= book.title %></a></h5>
           <h5><%= book.price %>$</h5>
+        </div>
+        
+        <div class="card-body" style="text-align: right;">
+          <form action="/cart/edit" method="POST">
+            <input type="hidden" name="id" value="<%= cart._id %>" />
+            <input type="hidden" name="itemId" value="<%= book._id %>" />
+            <button type="submit" class="btn btn-primary"> Remove Item </button>
+          </form>
         </div> 
       </div>
     <%})%>
+    
 
     <h3 style="margin-top:20px ;">Total: <%= cart.totalPayment %> $</h3>
     <form action="/cart/placeOrder" method="POST">
@@ -31,4 +40,6 @@
     </form>
   </div>
   <% } %>
+  <h5 style="margin-top:15px ;"><a href="/order/index">View Orders</a></h5>
+  <h5 style="margin-top:15px ;"><a href="/book/index">Continue Shopping</a></h5>
 </div>   
