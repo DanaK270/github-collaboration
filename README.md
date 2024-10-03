@@ -72,6 +72,8 @@
 
 - The order accesses books by reference, so when the seller updates the book's price, the new price will be displayed in the order not the old price that the buyer have payed.
 
+- The buyer can't add the same book twice to their cart.
+
 ---
 
 ### _Future Enhancements_
