@@ -17,7 +17,7 @@ exports.cart_create_post = async (req, res) => {
       cart = new Cart({
         status: 'active',
         totalPayment: 0,
-        books: [{ book: book._id, quantity: 1 }],
+        books: [],
         buyer: req.user._id
       })
     }
@@ -29,7 +29,7 @@ exports.cart_create_post = async (req, res) => {
       .then((cartObj) => {
         console.log('cart object', cartObj)
         if (cartObj.length > 0) {
-          // Cart.books.quantity += 1
+          // alert('Book Already Exist')
           console.log('Book Already Exist')
         } else {
           cart.books.push(book)
@@ -38,7 +38,7 @@ exports.cart_create_post = async (req, res) => {
             .then(() => {
               console.log('Book Doesnot Exist. Its added now')
             })
-            .catch((err) => {
+            .catch(() => {
               console.log(err)
             })
         }
