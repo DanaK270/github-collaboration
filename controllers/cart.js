@@ -17,17 +17,35 @@ exports.cart_create_post = async (req, res) => {
       cart = new Cart({
         status: 'active',
         totalPayment: 0,
-        books: [],
+        books: [{ book: book._id, quantity: 1 }],
         buyer: req.user._id
       })
     }
     cart.totalPayment += book.price
-    if (Book.find(book.id)) {
-      book.quantity += 1
-    } else {
-      cart.books.push(book)
-    }
-    await cart.save()
+
+    console.log('cart.books', cart.books)
+
+    Cart.find({ _id: cart._id, books: { $in: [book._id] } })
+      .then((cartObj) => {
+        console.log('cart object', cartObj)
+        if (cartObj.length > 0) {
+          // Cart.books.quantity += 1
+          console.log('Book Already Exist')
+        } else {
+          cart.books.push(book)
+          cart
+            .save()
+            .then(() => {
+              console.log('Book Doesnot Exist. Its added now')
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        }
+      })
+      .catch((err) => {
+        console.log(err)
+      })
     res.redirect('/cart/index')
   } catch (err) {
     console.log(err)
