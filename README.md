@@ -72,8 +72,6 @@
 
 - The order accesses books by reference, so when the seller updates the book's price, the new price will be displayed in the order not the old price that the buyer have payed.
 
-- When the same book is added to cart more than once and then the buyer clicked "remove" for one of them only, all of them will get removed but the total payment of the cart will be deducted by the price of only one book.
-
 ---
 
 ### _Future Enhancements_
